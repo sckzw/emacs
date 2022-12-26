@@ -1,0 +1,20 @@
+/etc/apt/sources.listのdeb-srcのコメントを削除
+sudo apt update
+sudo apt build-dep emacs
+https://qiita.com/hachisukansw/items/154b5349f99a7152fd46
+
+sudo apt install language-selector-common
+check-language-support -l ja
+sudo apt-get install $(check-language-support -l ja)
+sudo apt-get install fcitx-mozc
+sudo update-locale LANG=ja_JP.UTF8
+
+.profileに以下を追加
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export DefaultIMModule=fcitx
+if [ $SHLVL = 1 ] ; then
+    (fcitx-autostart > /dev/null 2>&1 &)
+    xset -r 49 > /dev/null 2>&1
+fi
