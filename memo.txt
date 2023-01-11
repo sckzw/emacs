@@ -18,3 +18,9 @@ if [ $SHLVL = 1 ] ; then
     (fcitx-autostart > /dev/null 2>&1 &)
     xset -r 49 > /dev/null 2>&1
 fi
+
+WSLとWindows間でPATHを引き継がない
+https://zenn.dev/o2z/articles/zenn-20210524-01
+
+hdl_checkerのインスントール
+pip3 install hdl-checker --user --upgrade
